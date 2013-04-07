@@ -8,25 +8,16 @@ if (isset($_GET['option'])) {
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Home</title>
+        <title>TCONTUR</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">   
-        <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="js/cufon-yui.js" type="text/javascript"></script>
-        <script src="js/cufon-replace.js" type="text/javascript"></script>
-        <script src="js/Vegur_500.font.js" type="text/javascript"></script> 
-        <script src="js/FF-cash.js" type="text/javascript"></script>      
-        <script src="js/tms-0.3.js" type="text/javascript"></script>
-        <script src="js/tms_presets.js" type="text/javascript"></script>
-        <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
-        <script src="js/jquery.equalheights.js" type="text/javascript"></script>
     <!--[if lt IE 8]>
         <div style=' clear: both; text-align:center; position: relative;'>
             <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-                    <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+                <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
             </a>
         </div>
     <![endif]-->
@@ -43,7 +34,7 @@ if (isset($_GET['option'])) {
                 <header>
                     <div class="main">
                         <div class="wrapper">
-                            <h1><a href="index.html">logo</a></h1>
+                            <h1><a href="/">logo</a></h1>
                             <div class="fright">
                                 <div class="indent">
                                     <span class="address">8901 Marmora Road, Glasgow, D04 89GR</span>
@@ -53,12 +44,12 @@ if (isset($_GET['option'])) {
                         </div>
                         <nav>
                             <ul class="menu">
-                                <li><a class="active" href="index.html">Home</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="maintenance.html">Maintenance </a></li>
-                                <li><a href="repair.html">Repair</a></li>
-                                <li><a href="price.html">Price List</a></li>
-                                <li><a href="locations.html">Locations</a></li>
+                                <li><a <?php if ($option == '') { ?>class="active" <?php } ?>href="/">Home</a></li>
+                                <li><a <?php if ($option == 'about') { ?>class="active" <?php } ?>href="/about">About Us</a></li>
+                                <li><a <?php if ($option == 'maintenance') { ?>class="active" <?php } ?>href="/maintenance">Maintenance </a></li>
+                                <li><a <?php if ($option == 'repair') { ?>class="active" <?php } ?>href="/repair">Repair</a></li>
+                                <li><a <?php if ($option == 'price') { ?>class="active" <?php } ?>href="/price">Price List</a></li>
+                                <li><a <?php if ($option == 'locations') { ?>class="active" <?php } ?>href="/locations">Locations</a></li>
                             </ul>
                         </nav>
                         <div class="slider-wrapper">
@@ -204,22 +195,31 @@ if (isset($_GET['option'])) {
                 </footer>
             </div>
         </div>
+        <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="js/cufon-yui.js" type="text/javascript"></script>
+        <script src="js/cufon-replace.js" type="text/javascript"></script>
+        <script src="js/Vegur_500.font.js" type="text/javascript"></script> 
+        <script src="js/FF-cash.js" type="text/javascript"></script>      
+        <script src="js/tms-0.3.js" type="text/javascript"></script>
+        <script src="js/tms_presets.js" type="text/javascript"></script>
+        <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+        <script src="js/jquery.equalheights.js" type="text/javascript"></script>
         <script type="text/javascript"> Cufon.now(); </script>
         <script type="text/javascript">
-                    $(window).load(function() {
-                            $('.slider')._TMS({
-                                    duration:1000,
-                                    easing:'easeOutQuint',
-                                    preset:'simpleFade',
-                                    slideshow:7000,
-                                    banners:false,
-                                    pauseOnHover:true,
-                                    pagination:false,
-                                    pagNums:false,
-                                    nextBu:'.next',
-                                    prevBu:'.prev'
-                            });
-                    });
+            $(document).on('ready', function() {
+                $('.slider')._TMS({
+                    duration:1000,
+                    easing:'easeOutQuint',
+                    preset:'simpleFade',
+                    slideshow:7000,
+                    banners:false,
+                    pauseOnHover:true,
+                    pagination:false,
+                    pagNums:false,
+                    nextBu:'.next',
+                    prevBu:'.prev'
+                });
+            });
         </script>
     </body>
 </html>
