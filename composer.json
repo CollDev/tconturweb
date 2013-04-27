@@ -3,6 +3,7 @@
         "silex/silex": "1.0.*@dev",
         "symfony/yaml": "2.2.*",
 	"symfony/finder": "2.2.*",
-	"twig/twig": "1.12.*"
+	"twig/twig": "1.12.*",
+        "symfony/twig-bridge": "~2.1"
     }
 }
