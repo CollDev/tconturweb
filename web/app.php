@@ -5,9 +5,19 @@ use Silex\Application as App;
 use Silex\Provider\TwigServiceProvider as Twig;
 use Silex\Provider\ServiceControllerServiceProvider as Controller;
 use Silex\Provider\UrlGeneratorServiceProvider as Url;
+use Silex\Provider\HttpCacheServiceProvider as Cache;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 $app = new App();
-$app['debug'] = true;
+$app['debug'] = false;
+
+//Cache
+$app->register(new Cache(), array(
+    'http_cache.cache_dir' => __DIR__ . '/../app/cache/',
+));
+//end Cache
 
 //Twig
 $app->register(new Twig(), array(
@@ -28,7 +38,8 @@ $app->register(new Controller());
 $app->register(new Url());
 
 $app->get('/', function() use($app) {
-    return $app['twig']->render('templates/index.twig');
+    $response = $app['twig']->render('templates/index.twig');
+    return new Response($response, 200, array('Cache-Control' => 's-maxage=3600, public'));
 })->bind('index');
 
 $app->get('/about', function() use($app) {
@@ -52,4 +63,17 @@ $app->get('/repair', function() use($app) {
 })->bind('repair');
 //end Routing
 
-$app->run();
+$app->error(function (\Exception $e) {
+    if ($e instanceof NotFoundHttpException) {
+        return new Response('La página que buscas no está aquí.', 404);
+    }
+
+    $code = ($e instanceof HttpException) ? $e->getStatusCode() : 500;
+    return new Response('Algo ha fallado en nuestra sala de máquinas.', $code);
+});
+
+if ($app['debug']) {
+    $app->run();
+} else {
+ $app['http_cache']->run();
+}
