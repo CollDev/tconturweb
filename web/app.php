@@ -1,19 +1,31 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$app = new Silex\Application();
+use Silex\Application as App;
+use Silex\Provider\TwigServiceProvider as Twig;
+use Silex\Provider\ServiceControllerServiceProvider as Controller;
+use Silex\Provider\UrlGeneratorServiceProvider as Url;
+
+$app = new App();
 $app['debug'] = true;
 
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
+//Twig
+$app->register(new Twig(), array(
     'twig.path'       => __DIR__ . '/../src/views/',
     'twig.class_path' => __DIR__ . '/../vendor/twig/twig/lib/'
 ));
 
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
-
 $app->before(function() use ($app) {
     $app['twig']->addGlobal('layout', $app['twig']->loadTemplate('layout.twig'));
 });
+//end Twig
+
+//Controller
+$app->register(new Controller());
+//end Controller
+
+//Routing
+$app->register(new Url());
 
 $app->get('/', function() use($app) {
     return $app['twig']->render('templates/index.twig');
@@ -38,5 +50,6 @@ $app->get('/price', function() use($app) {
 $app->get('/repair', function() use($app) {
     return $app['twig']->render('templates/repair.twig');
 })->bind('repair');
+//end Routing
 
 $app->run();
