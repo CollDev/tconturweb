@@ -156,6 +156,7 @@
                 });
                 {% elseif app.request.get('_route') == 'maintenance' -%}
                 $(".lightbox").append("<span></span>");
+                $("a[data-gal^='prettyVideo']").prettyPhoto({animation_speed:'normal',theme:'facebook',slideshow:false, autoplay_slideshow: false});
                 {% endif -%}
             });
         </script>
