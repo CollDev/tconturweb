@@ -7,8 +7,6 @@ use Silex\Provider\ServiceControllerServiceProvider as Controller;
 use Silex\Provider\UrlGeneratorServiceProvider as Url;
 use Silex\Provider\HttpCacheServiceProvider as Cache;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 $app = new App();
 $app['debug'] = false;
