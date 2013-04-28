@@ -21,11 +21,12 @@ $app->register(new Cache(), array(
 
 //Twig
 $app->register(new Twig(), array(
-    'twig.path'       => __DIR__ . '/../src/views/',
+    'twig.path'       => __DIR__ . '/../src/Main/Resources/views/',
     'twig.class_path' => __DIR__ . '/../vendor/twig/twig/lib/'
 ));
 
 $app->before(function() use ($app) {
+    $app['twig']->addGlobal('base', $app['twig']->loadTemplate('base.html.twig'));
     $app['twig']->addGlobal('layout', $app['twig']->loadTemplate('layout.html.twig'));
 });
 //end Twig
@@ -62,7 +63,7 @@ $app->get('/repair', function() use($app) {
     return $app['twig']->render('templates/repair.html.twig');
 })->bind('repair');
 //end Routing
-
+/*
 $app->error(function (\Exception $e) {
     if ($e instanceof NotFoundHttpException) {
         return new Response('La página que buscas no está aquí.', 404);
@@ -71,7 +72,7 @@ $app->error(function (\Exception $e) {
     $code = ($e instanceof HttpException) ? $e->getStatusCode() : 500;
     return new Response('Algo ha fallado en nuestra sala de máquinas.', $code);
 });
-
+*/
 if ($app['debug']) {
     $app->run();
 } else {

@@ -1,0 +1,152 @@
+{% extends base %}
+
+{% block stylesheets -%}
+        <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+        {% if (app.request.get('_route') == 'maintenance') %}
+        <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen">
+        {% endif %}
+{% endblock %}
+
+{% block body -%}
+        <div class="main-bg">
+            <div class="bg">
+                <!--==============================header=================================-->
+                <header>
+                    <div class="main">
+                        <div class="wrapper">
+                            <h1><a href="{{ path('index') }}">logo</a></h1>
+                            <div class="fright">
+                                <div class="indent">
+                                    <span class="address">8901 Marmora Road, Glasgow, D04 89GR</span>
+                                    <span class="phone">Tel: +1 959 552 5963</span>
+                                </div>
+                            </div>
+                        </div>
+                        <nav>
+                            <ul class="menu">
+                                <li><a {% if (app.request.get('_route') == 'index') %}class="active" {% endif %}href="/">Home</a></li>
+                                <li><a {% if (app.request.get('_route') == 'about') %}class="active" {% endif %}href="/about">About Us</a></li>
+                                <li><a {% if (app.request.get('_route') == 'maintenance') %}class="active" {% endif %}href="/maintenance">Maintenance</a></li>
+                                <li><a {% if (app.request.get('_route') == 'repair') %}class="active" {% endif %}href="/repair">Repair</a></li>
+                                <li><a {% if (app.request.get('_route') == 'price') %}class="active" {% endif %}href="/price">Price List</a></li>
+                                <li><a {% if (app.request.get('_route') == 'locations') %}class="active" {% endif %}href="/locations">Locations</a></li>
+                            </ul>
+                        </nav>
+                        {% if app.request.get('_route') == 'index' %}
+                        <div class="slider-wrapper">
+                            <div class="slider">
+                                <ul class="items">
+                                    <li>
+                                        <img src="images/slider-img1.jpg" alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="images/slider-img2.jpg" alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="images/slider-img3.jpg" alt="" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="prev" href="#">prev</a>
+                            <a class="next" href="#">next</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </header>
+
+                <!--==============================content================================-->
+                <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - January 30, 2012!</div>
+                    <div class="main">
+                        <div class="container_12">
+                            <div class="wrapper p5">
+                                <article class="grid_4">
+                                    <div class="wrapper">
+                                        <figure class="img-indent"><img src="images/page1-img1.png" alt=""></figure>
+                                        <div class="extra-wrap">
+                                            <h4>Engine Repair</h4>
+                                            <p class="p2">Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.</p>
+                                            <a class="button" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="grid_4">
+                                    <div class="wrapper">
+                                        <figure class="img-indent"><img src="images/page1-img2.png" alt=""></figure>
+                                        <div class="extra-wrap">
+                                            <h4>Wheel Alignment</h4>
+                                            <p class="p2">Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                            <a class="button" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="grid_4">
+                                    <div class="wrapper">
+                                        <figure class="img-indent"><img src="images/page1-img3.png" alt=""></figure>
+                                        <div class="extra-wrap">
+                                            <h4>Fluid Exchanges</h4>
+                                            <p class="p2">No sea takimata sanctus est gorem ipsum dolor sit amet forem ipsum.</p>
+                                            <a class="button" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="container-bot">
+                                <div class="container-top">
+                                    <div class="container">
+                                        <div class="wrapper">
+                                            {% block content %}{% endblock %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--==============================footer=================================-->
+                <footer>
+                    <div class="main">
+                        <span>TCONTUR &copy; {{ "now"|date("Y") }} Todos los derechos reservados.</span> Creado por <a href="http://www.colldev.com/" target="_blank" rel="nofollow">CollDev</a>. Alojado en <a href="http://www.royalhoster.com/" target="_blank" rel="nofollow">RoyalHoster</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+{% endblock %}
+
+{% block javascripts %}
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/cufon-yui.js"></script>
+        <script src="js/cufon-replace.js"></script>
+        <script src="js/Vegur_300.font.js"></script>
+        <script src="js/Vegur_500.font.js"></script> 
+        <script src="js/FF-cash.js"></script>      
+        <script src="js/tms-0.3.js"></script>
+        <script src="js/tms_presets.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.equalheights.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script>
+            Cufon.now();
+            $(document).on('ready', function() {
+                {% if app.request.get('_route') == 'index' -%}
+                $('.slider')._TMS({
+                    duration:1000,
+                    easing:'easeOutQuint',
+                    preset:'simpleFade',
+                    slideshow:7000,
+                    banners:false,
+                    pauseOnHover:true,
+                    pagination:false,
+                    pagNums:false,
+                    nextBu:'.next',
+                    prevBu:'.prev'
+                });
+                {% elseif app.request.get('_route') == 'maintenance' -%}
+                $(".lightbox").append("<span></span>");
+                $("a[data-gal^='prettyVideo']").prettyPhoto({animation_speed:'normal',theme:'facebook',slideshow:false, autoplay_slideshow: false});
+                {% endif -%}
+            });
+        </script>
+{% endblock %}
