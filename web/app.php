@@ -69,8 +69,8 @@ $app->error(function (\Exception $e, $code) use ($app) {
     }
 });
 
-//if ($app['debug']) {
+if ($app['debug']) {
     $app->run();
-//} else {
-// $app['http_cache']->run();
-//}
+} else {
+ $app['http_cache']->run();
+}
