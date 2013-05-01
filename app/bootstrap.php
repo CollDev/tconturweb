@@ -6,6 +6,7 @@ use Silex\Provider\UrlGeneratorServiceProvider as Url;
 use Silex\Provider\HttpCacheServiceProvider as Cache;
 use Main\Entity\Entry;
 use Main\Controller\EntryController;
+use Silex\Provider\DoctrineServiceProvider as Doctrine;
 
 $app['debug'] = true;
 $app['locale'] = 'es';
@@ -43,3 +44,18 @@ $app['entry.controller'] = $app->share(function() use ($app) {
 
 $app->get('/getEntries', "entry.controller:getEntriesAction");
 //end Controller
+
+//Doctrine
+$app->register(new Doctrine(), array(
+    'db.options' => array(
+        'mysql_read' => array(
+            'driver'    => 'pdo_mysql',
+            'host'      => 'localhost',
+            'dbname'    => 'royalhoster_tcon',//royalhoster_tcon
+            'user'      => 'royalhoster_tcon',//royalhoster_tcon
+            'password'  => 'wasp513',//wasp513
+            'charset'   => 'utf8',
+        ),
+    ),
+));
+//end Doctrine

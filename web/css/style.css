@@ -168,8 +168,8 @@ header nav {
 	top:50%;
 	margin-top:-200px;
 }
-.prev {background:url(../images/slider-prev.png) 0 0 no-repeat; left:0;}
-.next {background:url(../images/slider-next.png) 0 0 no-repeat; right:0;}
+.prev {background:url(../images/slider/prev.png) 0 0 no-repeat; left:0;}
+.next {background:url(../images/slider/next.png) 0 0 no-repeat; right:0;}
 
 /*********************************content*************************************/
 #content {

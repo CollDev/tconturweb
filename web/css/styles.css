@@ -3,3 +3,8 @@ div.wrapper div.notfound {
     display: inline-block;
     vertical-align: middle;
 }
+
+footer div.main {
+    font-size: 12px;
+    white-space: nowrap;
+}
