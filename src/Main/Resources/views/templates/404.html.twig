@@ -8,7 +8,14 @@
                                 <div class="container-top">
                                     <div class="container">
                                         <div class="wrapper">
-                                            La página buscada no se encuentra aún.
+                                            <div class="notfound">
+                                                <img src="images/broken_glass.png" />
+                                            </div>
+                                            <div class="notfound">
+                                                <h2>Pagina no encontrada</h2>
+                                                <h3>Vaya, parece que hubo un error.</h3>
+                                                <h4>La pagina {{ app.request.getRequestUri }} no existe.</h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
