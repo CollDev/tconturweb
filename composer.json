@@ -5,6 +5,13 @@
 	"symfony/finder": "2.2.*",
 	"twig/twig": "1.12.*",
         "symfony/twig-bridge": "~2.1",
-        "doctrine/dbal": "2.2.*"
+        "doctrine/dbal": "2.2.*",
+        "symfony/security": "2.1.*"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
     }
 }
