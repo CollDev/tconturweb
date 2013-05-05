@@ -95,6 +95,7 @@
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.equalheights.js"></script>
         <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="lib/ckeditor/ckeditor.js"></script>
         <script>
             Cufon.now();
             $(document).on('ready', function() {
@@ -115,6 +116,13 @@
                 $(".lightbox").append("<span></span>");
                 $("a[data-gal^='prettyVideo']").prettyPhoto({animation_speed:'normal',theme:'facebook',slideshow:false, autoplay_slideshow: false});
                 {% endif -%}
+            });
+            $('div.cke_editable_inline').on('blur', function() {
+                var data = CKEDITOR.instances.editor1.getData();
+                console.log(data);
+                $.post('save.php?id='+ $(this).data('entry'), {
+                    content : data
+                })
             });
         </script>
     {% endblock %}

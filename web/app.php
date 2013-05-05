@@ -10,5 +10,5 @@ require_once __DIR__ . '/../app/routing.php';
 if ($app['debug']) {
     $app->run();
 } else {
- $app['http_cache']->run();
+    $app['http_cache']->run();
 }
