@@ -84,14 +84,14 @@ header {
 }
 
 h1 {
-	padding:45px 20px 37px 26px; 
+	padding:20px; 
 	background:url(../images/h1-bg.jpg) 0 0 no-repeat;
 	float:left;
 }
 	h1 a {
 		display:block;
-		width:230px;
-		height:55px;
+		width:500px;
+		height:90px;
 		text-indent:-999em;
 		background:url(../images/logo.png) 0 0 no-repeat;
 	}
