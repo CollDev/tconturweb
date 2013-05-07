@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
-        {% if (app.request.get('_route') == 'maintenance') %}
+        {% if (app.request.get('_route') == 'servicios') %}
         <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen">
         {% endif %}
         <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
@@ -97,7 +97,7 @@
         <script>
             Cufon.now(); 
             $(document).on('ready', function() {
-                {% if app.request.get('_route') == 'index' -%}
+                {% if app.request.get('_route') == 'index' %}
                 $('.slider')._TMS({
                     duration:1000,
                     easing:'easeOutQuint',
@@ -110,7 +110,7 @@
                     nextBu:'.next',
                     prevBu:'.prev'
                 });
-                {% elseif app.request.get('_route') == 'maintenance' -%}
+                {% elseif app.request.get('_route') == 'servicios' %}
                 $(".lightbox").append("<span></span>");
                 $("a[data-gal^='prettyVideo']").prettyPhoto({animation_speed:'normal',theme:'facebook',slideshow:false, autoplay_slideshow: false});
                 {% endif %}
