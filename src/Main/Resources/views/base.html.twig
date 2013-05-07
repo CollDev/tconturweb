@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
         <title>{% block title %}TCONTUR{% endblock %}</title>
         {% block stylesheets -%}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
@@ -15,17 +14,17 @@
         <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-        <!--[if lt IE 8]>
+    <!--[if lt IE 8]>
         <div style=' clear: both; text-align:center; position: relative;'>
             <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
                 <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
             </a>
         </div>
-        <![endif]-->
-        <!--[if lt IE 9]>
+    <![endif]-->
+    <!--[if lt IE 9]>
         <script src="js/html5.js"></script>
         <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
-        <![endif]-->
+    <![endif]-->
     </head>
 
     <body>
@@ -38,19 +37,19 @@
                             <h1><a href="{{ path('index') }}">logo</a></h1>
                             <div class="fright">
                                 <div class="indent">
-                                    <span class="address">8901 Marmora Road, Glasgow, D04 89GR</span>
-                                    <span class="phone">Tel: +1 959 552 5963</span>
+                                    <span class="address">Jr. Algarrobos 534 Urb. Los Jardines - S.M.P. Lima-Perú</span>
+                                    <span class="phone">Telf: 622-0204</span>
                                 </div>
                             </div>
                         </div>
                         <nav>
                             <ul class="menu">
-                                <li><a {% if (app.request.get('_route') == 'index') %}class="active" {% endif %}href="/">Home</a></li>
-                                <li><a {% if (app.request.get('_route') == 'about') %}class="active" {% endif %}href="/about">About Us</a></li>
-                                <li><a {% if (app.request.get('_route') == 'maintenance') %}class="active" {% endif %}href="/maintenance">Maintenance</a></li>
-                                <li><a {% if (app.request.get('_route') == 'repair') %}class="active" {% endif %}href="/repair">Repair</a></li>
-                                <li><a {% if (app.request.get('_route') == 'price') %}class="active" {% endif %}href="/price">Price List</a></li>
-                                <li><a {% if (app.request.get('_route') == 'locations') %}class="active" {% endif %}href="/locations">Locations</a></li>
+                                <li><a {% if (app.request.get('_route') == 'index') %}class="active" {% endif %} href="/">Inicio</a></li>
+                                <li><a {% if (app.request.get('_route') == 'nosotros') %}class="active" {% endif %} href="/nosotros">Nosotros</a></li>
+                                <li><a {% if (app.request.get('_route') == 'servicios') %}class="active" {% endif %} href="/servicios">Servicios</a></li>
+                                <li><a {% if (app.request.get('_route') == 'productos') %}class="active" {% endif %} href="/productos">Productos</a></li>
+                                <li><a {% if (app.request.get('_route') == 'contacto') %}class="active" {% endif %} href="/contacto">Contáctenos</a></li>
+                                <li><a {% if (app.request.get('_route') == 'clientes') %}class="active" {% endif %} href="/clientes">Clientes</a></li>
                             </ul>
                         </nav>
                         {% if app.request.get('_route') == 'index' %}
@@ -58,13 +57,13 @@
                             <div class="slider">
                                 <ul class="items">
                                     <li>
-                                        <img src="images/slider/img1.jpg" alt="" />
+                                        <img src="images/slider-img1.jpg" alt="" />
                                     </li>
                                     <li>
-                                        <img src="images/slider/img2.jpg" alt="" />
+                                        <img src="images/slider-img2.jpg" alt="" />
                                     </li>
                                     <li>
-                                        <img src="images/slider/img3.jpg" alt="" />
+                                        <img src="images/slider-img3.jpg" alt="" />
                                     </li>
                                 </ul>
                             </div>
@@ -77,7 +76,7 @@
                 {% block content %}{% endblock %}
                 <footer>
                     <div class="main">
-                        <span>TCONTUR &copy; {{ "now"|date("Y") }} Todos los derechos reservados.</span> Creado por <a href="http://www.colldev.com/" target="_blank" rel="nofollow">CollDev</a> Alojado en <a href="http://www.royalhoster.com/" target="_blank" rel="nofollow">RoyalHoster</a>
+                        <span>TCONTUR &copy; <?php echo date("Y"); ?> Todos los derechos reservados.</span> Creado por <a href="http://www.colldev.com/" target="_blank" rel="nofollow">Collaborative Development</a>. Alojado en <a href="http://www.royalhoster.com/" target="_blank" rel="nofollow">RoyalHoster</a>
                     </div>
                 </footer>
             </div>
@@ -95,9 +94,8 @@
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.equalheights.js"></script>
         <script src="js/jquery.prettyPhoto.js"></script>
-<!--        <script src="lib/ckeditor/ckeditor.js"></script>-->
         <script>
-            Cufon.now();
+            Cufon.now(); 
             $(document).on('ready', function() {
                 {% if app.request.get('_route') == 'index' -%}
                 $('.slider')._TMS({
@@ -115,7 +113,7 @@
                 {% elseif app.request.get('_route') == 'maintenance' -%}
                 $(".lightbox").append("<span></span>");
                 $("a[data-gal^='prettyVideo']").prettyPhoto({animation_speed:'normal',theme:'facebook',slideshow:false, autoplay_slideshow: false});
-                {% endif -%}
+                {% endif %}
             });
 //            $('div.cke_editable_inline').on('blur', function() {
 //                var data = CKEDITOR.instances.editor1.getData();
