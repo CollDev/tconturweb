@@ -451,152 +451,6 @@
         ]
     },
     {
-        "name": "silex/silex",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/fabpot/Silex.git",
-            "reference": "a0b5f746cf4e5f93c9242ecd7804d5c23f419f85"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/fabpot/Silex/zipball/a0b5f746cf4e5f93c9242ecd7804d5c23f419f85",
-            "reference": "a0b5f746cf4e5f93c9242ecd7804d5c23f419f85",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "pimple/pimple": "1.*",
-            "symfony/event-dispatcher": ">=2.3,<2.4-dev",
-            "symfony/http-foundation": ">=2.3,<2.4-dev",
-            "symfony/http-kernel": ">=2.3,<2.4-dev",
-            "symfony/routing": ">=2.3,<2.4-dev"
-        },
-        "require-dev": {
-            "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
-            "monolog/monolog": ">=1.4,<2.0,>=1.4.1",
-            "swiftmailer/swiftmailer": "4.2.*",
-            "symfony/browser-kit": ">=2.1,<2.4-dev",
-            "symfony/config": ">=2.1,<2.4-dev",
-            "symfony/css-selector": ">=2.1,<2.4-dev",
-            "symfony/dom-crawler": ">=2.1,<2.4-dev",
-            "symfony/finder": ">=2.1,<2.4-dev",
-            "symfony/form": ">=2.1.4,<2.4-dev",
-            "symfony/locale": ">=2.1,<2.4-dev",
-            "symfony/monolog-bridge": ">=2.1,<2.4-dev",
-            "symfony/options-resolver": ">=2.1,<2.4-dev",
-            "symfony/process": ">=2.1,<2.4-dev",
-            "symfony/security": ">=2.1,<2.4-dev",
-            "symfony/serializer": ">=2.1,<2.4-dev",
-            "symfony/translation": ">=2.1,<2.4-dev",
-            "symfony/twig-bridge": ">=2.1,<2.4-dev",
-            "symfony/validator": ">=2.1,<2.4-dev",
-            "twig/twig": ">=1.8.0,<2.0-dev"
-        },
-        "suggest": {
-            "symfony/browser-kit": ">=2.1,<2.4-dev",
-            "symfony/css-selector": ">=2.1,<2.4-dev",
-            "symfony/dom-crawler": ">=2.1,<2.4-dev",
-            "symfony/form": ">= 2.1.4,<2.4-dev"
-        },
-        "time": "2013-04-30 08:55:57",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Silex": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Igor Wiedler",
-                "email": "igor@wiedler.ch",
-                "homepage": "http://wiedler.ch/igor/"
-            }
-        ],
-        "description": "The PHP micro-framework based on the Symfony2 Components",
-        "homepage": "http://silex.sensiolabs.org",
-        "keywords": [
-            "microframework"
-        ]
-    },
-    {
-        "name": "symfony/security",
-        "version": "v2.1.9",
-        "version_normalized": "2.1.9.0",
-        "target-dir": "Symfony/Component/Security",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Security.git",
-            "reference": "v2.1.9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Security/zipball/v2.1.9",
-            "reference": "v2.1.9",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "symfony/event-dispatcher": "2.1.*",
-            "symfony/http-foundation": "2.1.*",
-            "symfony/http-kernel": "2.1.*"
-        },
-        "require-dev": {
-            "doctrine/common": ">=2.2,<3.0",
-            "doctrine/dbal": ">=2.2,<3.0",
-            "symfony/form": "2.1.*",
-            "symfony/routing": "2.1.*",
-            "symfony/validator": "2.1.*"
-        },
-        "suggest": {
-            "doctrine/dbal": "to use the built-in ACL implementation",
-            "symfony/class-loader": "2.1.*",
-            "symfony/finder": "2.1.*",
-            "symfony/form": "2.1.*",
-            "symfony/routing": "2.1.*",
-            "symfony/validator": "2.1.*"
-        },
-        "time": "2013-03-18 14:34:11",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Security": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Security Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "symfony/http-foundation",
         "version": "v2.1.10",
         "version_normalized": "2.1.10.0",
@@ -755,5 +609,151 @@
         ],
         "description": "Symfony HttpKernel Component",
         "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/security",
+        "version": "v2.1.10",
+        "version_normalized": "2.1.10.0",
+        "target-dir": "Symfony/Component/Security",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Security.git",
+            "reference": "v2.1.10"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Security/zipball/v2.1.10",
+            "reference": "v2.1.10",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/event-dispatcher": "2.1.*",
+            "symfony/http-foundation": "2.1.*",
+            "symfony/http-kernel": "2.1.*"
+        },
+        "require-dev": {
+            "doctrine/common": ">=2.2,<3.0",
+            "doctrine/dbal": ">=2.2,<3.0",
+            "symfony/form": "2.1.*",
+            "symfony/routing": "2.1.*",
+            "symfony/validator": "2.1.*"
+        },
+        "suggest": {
+            "doctrine/dbal": "to use the built-in ACL implementation",
+            "symfony/class-loader": "2.1.*",
+            "symfony/finder": "2.1.*",
+            "symfony/form": "2.1.*",
+            "symfony/routing": "2.1.*",
+            "symfony/validator": "2.1.*"
+        },
+        "time": "2013-05-05 16:38:27",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Security": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Security Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "silex/silex",
+        "version": "1.0.x-dev",
+        "version_normalized": "1.0.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fabpot/Silex.git",
+            "reference": "a284db221b34a539dea1a73feb64ce7df5d77de6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fabpot/Silex/zipball/a284db221b34a539dea1a73feb64ce7df5d77de6",
+            "reference": "a284db221b34a539dea1a73feb64ce7df5d77de6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "pimple/pimple": "1.*",
+            "symfony/event-dispatcher": ">=2.1,<2.4-dev",
+            "symfony/http-foundation": ">=2.1,<2.4-dev",
+            "symfony/http-kernel": ">=2.1,<2.4-dev",
+            "symfony/routing": ">=2.1,<2.4-dev"
+        },
+        "require-dev": {
+            "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
+            "monolog/monolog": ">=1.4,<2.0,>=1.4.1",
+            "swiftmailer/swiftmailer": "5.*",
+            "symfony/browser-kit": ">=2.1,<2.4-dev",
+            "symfony/config": ">=2.1,<2.4-dev",
+            "symfony/css-selector": ">=2.1,<2.4-dev",
+            "symfony/dom-crawler": ">=2.1,<2.4-dev",
+            "symfony/finder": ">=2.1,<2.4-dev",
+            "symfony/form": ">=2.1.4,<2.4-dev",
+            "symfony/locale": ">=2.1,<2.4-dev",
+            "symfony/monolog-bridge": ">=2.1,<2.4-dev",
+            "symfony/options-resolver": ">=2.1,<2.4-dev",
+            "symfony/process": ">=2.1,<2.4-dev",
+            "symfony/security": ">=2.1,<2.4-dev",
+            "symfony/serializer": ">=2.1,<2.4-dev",
+            "symfony/translation": ">=2.1,<2.4-dev",
+            "symfony/twig-bridge": ">=2.1,<2.4-dev",
+            "symfony/validator": ">=2.1,<2.4-dev",
+            "twig/twig": ">=1.8.0,<2.0-dev"
+        },
+        "suggest": {
+            "symfony/browser-kit": ">=2.1,<2.4-dev",
+            "symfony/css-selector": ">=2.1,<2.4-dev",
+            "symfony/dom-crawler": ">=2.1,<2.4-dev",
+            "symfony/form": ">= 2.1.4,<2.4-dev"
+        },
+        "time": "2013-05-07 15:21:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Silex": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch",
+                "homepage": "http://wiedler.ch/igor/"
+            }
+        ],
+        "description": "The PHP micro-framework based on the Symfony2 Components",
+        "homepage": "http://silex.sensiolabs.org",
+        "keywords": [
+            "microframework"
+        ]
     }
 ]

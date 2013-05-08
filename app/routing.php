@@ -37,25 +37,25 @@ $app->get('/login', function(Request $request) use ($app) {
     ));
 })->bind('login');
 
-$app->get('/about', function() use($app) {
-    return $app['twig']->render('templates/about.html.twig');
-})->bind('about');
+$app->get('/nosotros', function() use($app) {
+    return $app['twig']->render('templates/nosotros.html.twig');
+})->bind('nosotros');//about
 
-$app->get('/maintenance', function() use($app) {
-    return $app['twig']->render('templates/maintenance.html.twig');
-})->bind('maintenance');
+$app->get('/servicios', function() use($app) {
+    return $app['twig']->render('templates/servicios.html.twig');
+})->bind('servicios');//maintenance
 
-$app->get('/locations', function() use($app) {
-    return $app['twig']->render('templates/locations.html.twig');
-})->bind('locations');
+$app->get('/productos', function() use($app) {
+    return $app['twig']->render('templates/productos.html.twig');
+})->bind('productos');//locations
 
-$app->get('/price', function() use($app) {
-    return $app['twig']->render('templates/price.html.twig');
-})->bind('price');
+$app->get('/contacto', function() use($app) {
+    return $app['twig']->render('templates/contacto.html.twig');
+})->bind('contacto');//price
 
-$app->get('/repair', function() use($app) {
-    return $app['twig']->render('templates/repair.html.twig');
-})->bind('repair');
+$app->get('/clientes', function() use($app) {
+    return $app['twig']->render('templates/clientes.html.twig');
+})->bind('clientes');//repair
 //end Routing
 
 if (!$app['debug']) {

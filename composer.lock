@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "26dfb4a32c28c96af14f6821f6f7eaaf",
+    "hash": "658886290cb6b930fea108c69c58b412",
     "packages": [
         {
             "name": "doctrine/common",
@@ -175,16 +175,16 @@
         },
         {
             "name": "silex/silex",
-            "version": "dev-master",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Silex.git",
-                "reference": "a0b5f746cf4e5f93c9242ecd7804d5c23f419f85"
+                "reference": "a284db221b34a539dea1a73feb64ce7df5d77de6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Silex/zipball/a0b5f746cf4e5f93c9242ecd7804d5c23f419f85",
-                "reference": "a0b5f746cf4e5f93c9242ecd7804d5c23f419f85",
+                "url": "https://api.github.com/repos/fabpot/Silex/zipball/a284db221b34a539dea1a73feb64ce7df5d77de6",
+                "reference": "a284db221b34a539dea1a73feb64ce7df5d77de6",
                 "shasum": ""
             },
             "require": {
@@ -198,7 +198,7 @@
             "require-dev": {
                 "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
                 "monolog/monolog": ">=1.4,<2.0,>=1.4.1",
-                "swiftmailer/swiftmailer": "4.2.*",
+                "swiftmailer/swiftmailer": "5.*",
                 "symfony/browser-kit": ">=2.1,<2.4-dev",
                 "symfony/config": ">=2.1,<2.4-dev",
                 "symfony/css-selector": ">=2.1,<2.4-dev",
@@ -253,21 +253,21 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2013-04-30 08:55:57"
+            "time": "2013-05-07 15:21:31"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.1.9",
+            "version": "v2.1.10",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "v2.1.9"
+                "reference": "v2.1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.1.9",
-                "reference": "v2.1.9",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.1.10",
+                "reference": "v2.1.10",
                 "shasum": ""
             },
             "require": {
@@ -353,17 +353,17 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.1.9",
+            "version": "v2.1.10",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "v2.1.9"
+                "reference": "v2.1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.1.9",
-                "reference": "v2.1.9",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.1.10",
+                "reference": "v2.1.10",
                 "shasum": ""
             },
             "require": {
@@ -392,21 +392,21 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-20 14:10:59"
+            "time": "2013-04-30 17:01:33"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v2.1.9",
+            "version": "v2.1.10",
             "target-dir": "Symfony/Component/HttpKernel",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "v2.1.9"
+                "reference": "v2.1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/v2.1.9",
-                "reference": "v2.1.9",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/v2.1.10",
+                "reference": "v2.1.10",
                 "shasum": ""
             },
             "require": {
@@ -454,7 +454,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-26 10:44:36"
+            "time": "2013-05-06 11:01:51"
         },
         {
             "name": "symfony/routing",
@@ -516,17 +516,17 @@
         },
         {
             "name": "symfony/security",
-            "version": "v2.1.9",
+            "version": "v2.1.10",
             "target-dir": "Symfony/Component/Security",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Security.git",
-                "reference": "v2.1.9"
+                "reference": "v2.1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Security/zipball/v2.1.9",
-                "reference": "v2.1.9",
+                "url": "https://api.github.com/repos/symfony/Security/zipball/v2.1.10",
+                "reference": "v2.1.10",
                 "shasum": ""
             },
             "require": {
@@ -572,7 +572,7 @@
             ],
             "description": "Symfony Security Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-18 14:34:11"
+            "time": "2013-05-05 16:38:27"
         },
         {
             "name": "symfony/twig-bridge",
