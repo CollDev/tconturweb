@@ -8,34 +8,41 @@ $app->get('/', function() use($app) {
     return new Response($response, 200, array('Cache-Control' => 's-maxage=3600, public'));
 })->bind('index');
 
-$app->get('/login', function(Request $request) use ($app) {
-//    if ('POST' == $request->getMethod()) {
-//        $username = $request->get('_username');
-//        $password = $request->get('_password');
-//        $user = new Main\Controller\UserController($app['db']);
-//        $encoder = $app['security.encoder_factory']->getEncoder($user);
-//        // compute the encoded password
-//        $encodedPassword = $encoder->encodePassword($password, $user->getSalt());
-//
-//            var_dump($password);exit;
-//        // compare passwords
-//        if ($user->password == $encodedPassword) {
-//            // set security token into security
-//            $token = new UsernamePasswordToken($user, $password, '', array('ROLE_USER'));
-//            $app['security']->setToken($token);
-//            //return $app->redirect('/jander');
-//            // redirect or give response here
-//            return $app->redirect('/admin');
-//        } else {
-//        // error feedback
-//        }
-//    }
+$app->match('/login', function(Request $request) use ($app) {
+    if ('POST' == $request->getMethod()) {
+        $username = $request->get('_username');
+        $password = $request->get('_password');
+        $user = new Main\Controller\UserController($app['db']);
+        $encoder = $app['security.encoder_factory']->getEncoder($user);
+        // compute the encoded password
+        $encodedPassword = $encoder->encodePassword($password, $user->getSalt());
+
+            var_dump($password);exit;
+        // compare passwords
+        if ($user->password == $encodedPassword) {
+            // set security token into security
+            $token = new UsernamePasswordToken($user, $password, '', array('ROLE_USER'));
+            $app['security']->setToken($token);
+            // redirect or give response here
+            return $app->redirect('/admin');
+        } else {
+        // error feedback
+        }
+    }
 
     return $app['twig']->render('templates/login.html.twig', array(
         'error' => $app['security.last_error']($request),
         'last_username' => $app['session']->get('_security.last_username'),
     ));
 })->bind('login');
+
+$app->get('/admin/logout', function(Request $request) use ($app) {
+    return $app['twig']->render('templates/logout.html.twig');
+})->bind('logout');
+
+$app->get('/admin/', function () use ($app) {
+    return $app['twig']->render('templates/admin.html.twig');
+})->bind('admin'); 
 
 $app->get('/nosotros', function() use($app) {
     return $app['twig']->render('templates/nosotros.html.twig');

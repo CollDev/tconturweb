@@ -43,14 +43,12 @@ $app->get('/getEntries', "entry.controller:getEntriesAction");
 //Doctrine
 $app->register(new Doctrine(), array(
     'db.options' => array(
-        'mysql_read' => array(
-            'driver'    => 'pdo_mysql',
-            'host'      => 'localhost',
-            'dbname'    => 'tcontur',//royalhoster_tcon
-            'user'      => 'root',//royalhoster_tcon
-            'password'  => 'decenio97',//wasp513
-            'charset'   => 'utf8',
-        ),
+        'driver'    => 'pdo_mysql',
+        'dbhost'    => 'localhost',
+        'dbname'    => 'tcontur',
+        'user'      => 'root',
+        'password'  => 'decenio97',
+        'charset'   => 'utf8',
     ),
 ));
 //end Doctrine
@@ -62,8 +60,8 @@ $app->register(new Security(), array(
         'default' => array(
             'pattern' => '^.*$',
             'anonymous' => true, // Needed as the login path is under the secured area
-            'form' => array('login_path' => '/login', 'check_path' => '/login_check'),
-            'logout' => array('logout_path' => '/logout'), // url to call for logging out
+            'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
+            'logout' => array('logout_path' => '/admin/logout'), // url to call for logging out
             'users' => $app->share(function() use ($app) {
                 // Specific class App\User\UserProvider is described below
                 return new Main\Controller\UserController($app['db']);

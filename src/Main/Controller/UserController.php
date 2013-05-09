@@ -23,7 +23,7 @@ class UserController implements UserProviderInterface
         if (!$user = $stmt->fetch()) {
             throw new UsernameNotFoundException(sprintf('Username "%s" does not exist.', $username));
         }
- 
+ var_dump($user['username'], $user['password'], explode(',', $user['roles']));exit;
         return new User($user['username'], $user['password'], explode(',', $user['roles']), true, true, true, true);
     }
  
