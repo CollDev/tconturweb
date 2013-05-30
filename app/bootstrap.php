@@ -53,17 +53,25 @@ $app->register(new Doctrine(), array(
 ));
 //end Doctrine
 
+//Session
+$app->register(new Session());
+//end Session
+
 //Security
 $app->register(new Security(), array(
     'security.firewalls' => array(
-        'login' => array('pattern' => '^/login'), // Example of an url available as anonymous user
-        'default' => array(
-            'pattern' => '^.*$',
-            'anonymous' => true, // Needed as the login path is under the secured area
+//        'admin' => array(
+//            'pattern' => '^/admin/',
+//            'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
+//            'users' => array(
+//                'admin' => array('ROLE_ADMIN', '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='),
+//            ),
+//        ),
+        'admin' => array(
+            'pattern' => '^/admin/',
             'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
             'logout' => array('logout_path' => '/admin/logout'), // url to call for logging out
             'users' => $app->share(function() use ($app) {
-                // Specific class App\User\UserProvider is described below
                 return new Main\Controller\UserController($app['db']);
             }),
         ),
@@ -73,11 +81,8 @@ $app->register(new Security(), array(
         array('^/admin.+$', 'ROLE_USER')
     )
 ));
+$app->boot();
 //end Security
-
-//Session
-$app->register(new Session());
-//end Session
 
 //Routing
 $app->register(new Url());

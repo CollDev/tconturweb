@@ -8,7 +8,7 @@ $app->get('/', function() use($app) {
     return new Response($response, 200, array('Cache-Control' => 's-maxage=3600, public'));
 })->bind('index');
 
-$app->match('/login', function(Request $request) use ($app) {
+$app->get('/login', function(Request $request) use ($app) {
     if ('POST' == $request->getMethod()) {
         $username = $request->get('_username');
         $password = $request->get('_password');
@@ -19,14 +19,16 @@ $app->match('/login', function(Request $request) use ($app) {
 
             var_dump($password);exit;
         // compare passwords
-        if ($user->password == $encodedPassword) {
+        if ($username === $user->username && $encodedPassword === $user->password) {
+            $app['session']->set('user', array('username' => $username));
             // set security token into security
             $token = new UsernamePasswordToken($user, $password, '', array('ROLE_USER'));
             $app['security']->setToken($token);
             // redirect or give response here
             return $app->redirect('/admin');
         } else {
-        // error feedback
+            // error feedback
+            return $app->redirect('/login');
         }
     }
 
