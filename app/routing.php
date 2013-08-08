@@ -42,7 +42,7 @@ $app->get('/admin/logout', function(Request $request) use ($app) {
     return $app['twig']->render('templates/logout.html.twig');
 })->bind('logout');
 
-$app->get('/admin/', function () use ($app) {
+$app->get('/admin/', function() use ($app) {
     return $app['twig']->render('templates/admin.html.twig');
 })->bind('admin'); 
 
@@ -65,6 +65,10 @@ $app->get('/contacto', function() use($app) {
 $app->get('/clientes', function() use($app) {
     return $app['twig']->render('templates/clientes.html.twig');
 })->bind('clientes');//repair
+
+$app->get('/73a', function() use($app) {
+    return $app['twig']->render('templates/73a.html.twig');
+})->bind('73a');//repair
 //end Routing
 
 if (!$app['debug']) {

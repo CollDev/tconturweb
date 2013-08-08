@@ -8,3 +8,8 @@ footer div.main {
     font-size: 12px;
     white-space: nowrap;
 }
+
+.iframe {
+    height: 100%;
+    width: 100%;
+}
