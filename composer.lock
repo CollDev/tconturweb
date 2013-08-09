@@ -217,12 +217,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Silex.git",
-                "reference": "9717cc0c58b8d6ee750f0a9daa99ca33acb5fd0e"
+                "reference": "86d041016617c4503a6136c565665663604545b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Silex/zipball/9717cc0c58b8d6ee750f0a9daa99ca33acb5fd0e",
-                "reference": "9717cc0c58b8d6ee750f0a9daa99ca33acb5fd0e",
+                "url": "https://api.github.com/repos/fabpot/Silex/zipball/86d041016617c4503a6136c565665663604545b8",
+                "reference": "86d041016617c4503a6136c565665663604545b8",
                 "shasum": ""
             },
             "require": {
@@ -291,7 +291,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2013-07-04 06:45:19"
+            "time": "2013-08-09 06:08:50"
         },
         {
             "name": "symfony/debug",
