@@ -1,23 +1,31 @@
-{% extends 'base.html.twig' %}
-
-{% block content %}
-                <section id="content">
-                    <div class="container_12">
-                        <div id="map_canvas" style="width:100%; height:600px;"></div>
-                    </div>
-                </section>
-{% endblock %}
-{% block javascripts %}
-    {{ parent() }}
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB5xAjFBQWSbj0CzCMRZgg4Yn5P9sJ1iNg&sensor=true"></script>
-    <script src=http://tracking.tcontur.com/static/js/simple.js></script>
-    <script src=http://tracking.tcontur.com/static/js/date.js></script>
-    <script>
-        var ruta = 6;
-        var inicio = "SMP";
-        var fin = "San Gabriel";
-        $(document).on('ready', function(){
-            initialize();
-        });
-    </script>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>73A</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html, body, #map_canvas {
+                height:100%; width:100%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="map_canvas"></div>
+        <script src="js/jquery.min.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB5xAjFBQWSbj0CzCMRZgg4Yn5P9sJ1iNg&sensor=true"></script>
+        <script src=http://tracking.tcontur.com/static/js/simple.js></script>
+        <script src=http://tracking.tcontur.com/static/js/date.js></script>
+        <script>
+            var ruta = 6;
+            var inicio = "SMP";
+            var fin = "San Gabriel";
+            $(document).on('ready', function(){
+                initialize();
+            });
+        </script>
+    </body>
+</html>
